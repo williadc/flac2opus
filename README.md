@@ -27,5 +27,4 @@ You will need perl >= 5.10, the flac decoder and opusenc encoder installed in yo
     use File::Copy;
     use Cwd;
     use v5.10;
-    use Encode;
     use Parallel::ForkManager;
