@@ -8,10 +8,7 @@ use File::Spec::Functions qw(splitdir);
 use File::Copy;
 use Cwd;
 use v5.10;
-use Encode;
 use Parallel::ForkManager;
-
-
 
 # Process cmdline options
 my (@sources, $dest, $help);
@@ -26,7 +23,7 @@ GetOptions ("s|sources=s{,}" => \@sources,
             "h|help"         => \$help);
 
 if ($help) {
-    say basename($0) . " -sources <dir where flacs are> -dest <dir where opuses go> [-bitrate <number 6-256>] [-tmp <tmp dir>] [-help]";
+    say basename($0) . " -sources <dir where flacs are> -dest <dir where opuses go> [-bitrate <number 6-256>] [-tmp <tmp dir>] [-processes #] [-help]";
     exit;
 }
 # in case users give comma-separated options instead of space separation
